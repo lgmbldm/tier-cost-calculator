@@ -58,8 +58,8 @@ function App() {
           )}
         </select>
       </div>
-      <div>form
-            <label>Goal Tier</label>
+      <div>
+        <label>Goal Tier</label>
         <select value={goal} onChange={event => setGoal(event.target.value)}>
           {tiers && tiers[tierType].map(tier =>
             <option value={tier.amount} key={tier.amount}>{tier.amount}</option>
