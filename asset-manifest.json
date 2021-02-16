@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/tier-cost-calculator/static/css/main.16d3de65.chunk.css",
+    "main.css": "/tier-cost-calculator/static/css/main.bf0475fb.chunk.css",
     "main.js": "/tier-cost-calculator/static/js/main.ab245239.chunk.js",
     "main.js.map": "/tier-cost-calculator/static/js/main.ab245239.chunk.js.map",
     "runtime-main.js": "/tier-cost-calculator/static/js/runtime-main.43f3aa62.js",
@@ -8,13 +8,13 @@
     "static/js/2.76cce1a8.chunk.js": "/tier-cost-calculator/static/js/2.76cce1a8.chunk.js",
     "static/js/2.76cce1a8.chunk.js.map": "/tier-cost-calculator/static/js/2.76cce1a8.chunk.js.map",
     "index.html": "/tier-cost-calculator/index.html",
-    "static/css/main.16d3de65.chunk.css.map": "/tier-cost-calculator/static/css/main.16d3de65.chunk.css.map",
+    "static/css/main.bf0475fb.chunk.css.map": "/tier-cost-calculator/static/css/main.bf0475fb.chunk.css.map",
     "static/js/2.76cce1a8.chunk.js.LICENSE.txt": "/tier-cost-calculator/static/js/2.76cce1a8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.43f3aa62.js",
     "static/js/2.76cce1a8.chunk.js",
-    "static/css/main.16d3de65.chunk.css",
+    "static/css/main.bf0475fb.chunk.css",
     "static/js/main.ab245239.chunk.js"
   ]
 }
