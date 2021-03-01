@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  const tierTypes = { "maxBetTiers": "Max Bet", "teamWinCoinTiers": "Passive Wins", "idolHitsTiers": "Idol Hits", "idolHomersTiers": "Idol Homers", "idolStrikeoutsTiers": "Idol Strikeouts", "idolShutoutsTiers": "Idol Shutouts" };
+  const tierTypes = { "maxBetTiers": "Snake Oil", "teamWinCoinTiers": "Popcorn", "teamLossCoinTiers": "Stale Popcorn", "idolHitsTiers": "Sunflower Seeds", "idolHomersTiers": "Hot Dog", "idolStrikeoutsTiers": "Chips", "idolShutoutsTiers": "Burger" };
   const [tiers, setTiers] = useState(null);
   const [tierType, setTierType] = useState("maxBetTiers");
   const [current, setCurrent] = useState(0);
@@ -43,7 +43,7 @@ function App() {
   return (
     <div className="container">
       <div>
-        <label>Tier Type</label>
+        <label>Snack</label>
         <select value={tierType} onChange={event => setTierType(event.target.value)}>
           {tiers && Object.keys(tiers).map(tierType =>
             <option value={tierType} key={tierType}>{tierTypes[tierType] || tierType}</option>
@@ -51,7 +51,7 @@ function App() {
         </select>
       </div>
       <div>
-        <label>Current Tier</label>
+        <label>Current Earning</label>
         <select value={current} onChange={event => setCurrent(event.target.value)}>
           {tiers && tiers[tierType].map(tier =>
             <option value={tier.amount} key={tier.amount}>{tier.amount}</option>
@@ -59,7 +59,7 @@ function App() {
         </select>
       </div>
       <div>
-        <label>Goal Tier</label>
+        <label>Goal Earning</label>
         <select value={goal} onChange={event => setGoal(event.target.value)}>
           {tiers && tiers[tierType].map(tier =>
             <option value={tier.amount} key={tier.amount}>{tier.amount}</option>
