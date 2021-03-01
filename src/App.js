@@ -3,7 +3,36 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  const tierTypes = { "maxBetTiers": "Snake Oil", "teamWinCoinTiers": "Popcorn", "teamLossCoinTiers": "Stale Popcorn", "idolHitsTiers": "Sunflower Seeds", "idolHomersTiers": "Hot Dog", "idolStrikeoutsTiers": "Chips", "idolShutoutsTiers": "Burger" };
+  const tierTypes = {
+    "maxBetTiers": {
+      name: "Snake Oil",
+      action: ""
+    },
+    "teamWinCoinTiers": {
+      name: "Popcorn",
+      action: "wins"
+    },
+    "teamLossCoinTiers": {
+      name: "Stale Popcorn",
+      action: "losses"
+    },
+    "idolHitsTiers": {
+      name: "Sunflower Seeds",
+      action: "hits"
+    },
+    "idolHomersTiers": {
+      name: "Hot Dog",
+      action: "homers"
+    },
+    "idolStrikeoutsTiers": {
+      name: "Chips",
+      action: "strikeouts"
+    },
+    "idolShutoutsTiers": {
+      name: "Burger",
+      action: "shutouts"
+    },
+  };
   const [tiers, setTiers] = useState(null);
   const [tierType, setTierType] = useState("maxBetTiers");
   const [current, setCurrent] = useState(0);
@@ -46,7 +75,7 @@ function App() {
         <label>Snack</label>
         <select value={tierType} onChange={event => setTierType(event.target.value)}>
           {tiers && Object.keys(tiers).map(tierType =>
-            <option value={tierType} key={tierType}>{tierTypes[tierType] || tierType}</option>
+            <option value={tierType} key={tierType}>{tierTypes[tierType]?.name || tierType}</option>
           )}
         </select>
       </div>
@@ -67,7 +96,7 @@ function App() {
         </select>
       </div>
       <h4>Total Price: {calculateTotalPrice()}</h4>
-      {tierType !== 'maxBetTiers' && <h4>Breakeven: {`${breakeven()} ${tierTypes[tierType] || tierType}`}</h4>}
+      {tierType !== 'maxBetTiers' && <h4>Breakeven: {`${breakeven()} ${tierTypes[tierType]?.action || tierType}`}</h4>}
     </div>
   )
 }
