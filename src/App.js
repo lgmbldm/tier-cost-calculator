@@ -32,6 +32,18 @@ function App() {
       name: "Burger",
       action: "shutouts"
     },
+    "floodClearTiers": {
+      name: "Slushie",
+      action: "cleared baserunners"
+    },
+    "blackHoleTiers": {
+      name: "Wet Pretzel",
+      action: "swallowed wins"
+    },
+    "idolStealTiers": {
+      name: "Pickles",
+      action: "steals"
+    }
   };
   const [tiers, setTiers] = useState(null);
   const [tierType, setTierType] = useState("maxBetTiers");
