@@ -76,8 +76,8 @@ function App() {
     return price;
   };
 
-  const breakeven = () => {
-    return Math.ceil(calculateTotalPrice() / goal);
+  const breakeven = (marginal) => {
+    return Math.ceil(calculateTotalPrice() / (marginal ? (goal - current) : goal));
   };
 
 
@@ -108,7 +108,8 @@ function App() {
         </select>
       </div>
       <h4>Total Price: {calculateTotalPrice()}</h4>
-      {tierType !== 'maxBetTiers' && <h4>Breakeven: {`${breakeven()} ${tierTypes[tierType]?.action || tierType}`}</h4>}
+      {tierType !== 'maxBetTiers' && <h4>Breakeven: {`${breakeven(false)} ${tierTypes[tierType]?.action || tierType}`}</h4>}
+      {tierType !== 'maxBetTiers' && <h4>Marginal Breakeven: {`${breakeven(true)} ${tierTypes[tierType]?.action || tierType}`}</h4>}
     </div>
   )
 }
