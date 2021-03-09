@@ -62,7 +62,7 @@ function App() {
 
   useEffect(() => {
     const tier = tiers?.[tierType];
-    setCurrent(tier?.[0].amount);
+    setCurrent(0);
     setGoal(tier?.[tier?.length - 1].amount);
   }, [tierType, tiers]);
 
@@ -77,7 +77,8 @@ function App() {
   };
 
   const breakeven = (marginal) => {
-    return Math.ceil(calculateTotalPrice() / (marginal ? (goal - current) : goal));
+    const denom = marginal ? (goal - current) : parseInt(goal);
+    return denom !== 0 ? Math.ceil(calculateTotalPrice() / denom) : 0;
   };
 
 
@@ -94,6 +95,7 @@ function App() {
       <div>
         <label>Current Earning</label>
         <select value={current} onChange={event => setCurrent(event.target.value)}>
+          <option value={0} key={0}>{0}</option>
           {tiers && tiers[tierType].map(tier =>
             <option value={tier.amount} key={tier.amount}>{tier.amount}</option>
           )}
@@ -102,6 +104,7 @@ function App() {
       <div>
         <label>Goal Earning</label>
         <select value={goal} onChange={event => setGoal(event.target.value)}>
+          <option value={0} key={0}>{0}</option>
           {tiers && tiers[tierType].map(tier =>
             <option value={tier.amount} key={tier.amount}>{tier.amount}</option>
           )}
