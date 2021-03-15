@@ -43,6 +43,34 @@ function App() {
     "idolStealTiers": {
       name: "Pickles",
       action: "steals"
+    },
+    "idolHomerAllowedTiers": {
+      name: "Meatball",
+      action: "homers allowed"
+    },
+    "timeOffTiers": {
+      name: "Breakfast",
+      action: ""
+    },
+    "sunTwoTiers": {
+      name: "Doughnut",
+      action: "wins set"
+    },
+    "idolPitcherWinTiers": {
+      name: "??? (idolPitcherWinTiers)",
+      action: "pitcher wins or something I guess"
+    },
+    "teamShamedTiers": {
+      name: "Lemonade",
+      action: "shames against"
+    },
+    "teamShamingTiers": {
+      name: "Taffy",
+      action: "shamings"
+    },
+    "incinerationTiers": {
+      name: "Sundae",
+      action: "incinerations"
     }
   };
   const [tiers, setTiers] = useState(null);
@@ -111,8 +139,8 @@ function App() {
         </select>
       </div>
       <h4>Total Price: {calculateTotalPrice()}</h4>
-      {tierType !== 'maxBetTiers' && <h4>Breakeven: {`${breakeven(false)} ${tierTypes[tierType]?.action || tierType}`}</h4>}
-      {tierType !== 'maxBetTiers' && <h4>Marginal Breakeven: {`${breakeven(true)} ${tierTypes[tierType]?.action || tierType}`}</h4>}
+      {!!tierTypes[tierType]?.action && <h4>Breakeven: {`${breakeven(false)} ${tierTypes[tierType]?.action || tierType}`}</h4>}
+      {!!tierTypes[tierType]?.action && <h4>Marginal Breakeven: {`${breakeven(true)} ${tierTypes[tierType]?.action || tierType}`}</h4>}
     </div>
   )
 }
