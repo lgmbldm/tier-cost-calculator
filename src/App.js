@@ -57,8 +57,12 @@ function App() {
       action: "wins set"
     },
     "idolPitcherWinTiers": {
-      name: "??? (idolPitcherWinTiers)",
-      action: "pitcher wins or something I guess"
+      name: "Hot Fries",
+      action: "pitcher wins"
+    },
+    "idolPitcherLoseTiers": {
+      name: "Cold Fries",
+      action: "pitcher losses"
     },
     "teamShamedTiers": {
       name: "Lemonade",
@@ -71,6 +75,10 @@ function App() {
     "incinerationTiers": {
       name: "Sundae",
       action: "incinerations"
+    },
+    "consumerTiers": {
+      name: "Chum",
+      action: "consumer attacks"
     }
   };
   const [tiers, setTiers] = useState(null);
