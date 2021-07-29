@@ -87,9 +87,9 @@ function App() {
   const [goal, setGoal] = useState(1000);
 
   const loadData = async () => {
-    const config = await fetch(`${process.env.PUBLIC_URL}/config.json`);
+    const config = await fetch("https://api.sibr.dev/corsmechanics/www.blaseball.com/database/shopSetup");
     const configJson = await config.json();
-    setTiers(configJson);
+    setTiers(configJson.snackData);
   };
 
   useEffect(() => {
